@@ -1,0 +1,9 @@
+<%- include('layout-head', { title: title, cssURL: cssURL }) %>
+<div>
+  <ul>
+    <% names.forEach(function(name, i){ %>
+      <li>2:<%= name %></li>
+    <% }) %>
+  </ul>
+</div>
+<%- include('layout-foot', { jsURL: jsURL }) %>

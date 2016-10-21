@@ -1,0 +1,14 @@
+{
+  "name": "tpl-benchmark",
+  "version": "0.1.0",
+  "description": "tpl benchmark",
+  "scripts": {
+    "test": "mocha tests/**/*.test.js"
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "mu2": "^0.5.21"
+  }
+}
