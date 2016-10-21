@@ -8,7 +8,7 @@ let data = {
   name: 'ykan'
 };
 let names = [];
-for (let i = 100000; i >= 0 ; i--) {
+for (let i = 1000000; i >= 0 ; i--) {
   names.push({
     name: 'test' + i
   });
