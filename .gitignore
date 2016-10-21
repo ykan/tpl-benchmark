@@ -3,6 +3,6 @@ build
 lib
 upload
 *.log
-
+*.marko.js
 .idea/
 .DS_Store

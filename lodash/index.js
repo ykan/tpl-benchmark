@@ -16,11 +16,13 @@ for (let i = 100000; i >= 0 ; i--) {
 data.names = names;
 let path = __dirname + '/page.ejs';
 let pageStr = read(path, 'utf8');
+const _ = require('lodash');
+let tpl = _.template(pageStr);
 
 const koa = require('koa');
 const app = koa();
 app.use(function*(next){
-  this.body = engine.compile(pageStr, {filename: path})(data);
+  this.body = tpl(data);
   yield next;
 });
 const request = require('supertest');

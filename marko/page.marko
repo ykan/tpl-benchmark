@@ -1,0 +1,13 @@
+
+<layout-use("./layout.marko") show-header=true>
+  <layout-put into="body">
+    <div>
+      <ul>
+        <for(i from 0 to data.names.length-1)>
+          <li if(i%2)>1:${data.names[i].name}</li>
+          <li else>2:${data.names[i].name}</li>
+        </for>
+      </ul>
+    </div>
+  </layout-put>
+</layout-use>

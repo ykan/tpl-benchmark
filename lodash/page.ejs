@@ -7,3 +7,18 @@
   <link rel="stylesheet" href="<%= cssURL %>">
 </head>
 <body>
+
+<div>
+  <ul>
+    <% names.forEach(function(name, i){ %>
+      <% if(i%2){ %>
+      <li>1:<%= name %></li>
+      <% } else { %>
+      <li>2:<%= name %></li>
+      <% } %>
+    <% }) %>
+  </ul>
+</div>
+<script src="<%= jsURL %>"></script>
+</body>
+</html>

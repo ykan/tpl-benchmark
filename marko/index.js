@@ -1,6 +1,6 @@
 'use strict';
-const engine = require('ejs');
-const read = require('fs').readFileSync;
+const engine = require('marko');
+require('marko/node-require').install();
 let data = {
   title: 'test',
   cssURL: 'style.css',
@@ -14,13 +14,12 @@ for (let i = 100000; i >= 0 ; i--) {
   });
 }
 data.names = names;
-let path = __dirname + '/page.ejs';
-let pageStr = read(path, 'utf8');
 
+let template = require('./page.n.marko');
 const koa = require('koa');
 const app = koa();
 app.use(function*(next){
-  this.body = engine.compile(pageStr, {filename: path})(data);
+  this.body = template.stream(data);
   yield next;
 });
 const request = require('supertest');
@@ -30,7 +29,7 @@ request(app.listen())
   .get('/')
   .expect(200)
   .end((err, res) => {
+    // console.log(res.text);
     console.log(`cost ${Date.now() - time}ms`);
     process.exit();
   });
-

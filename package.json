@@ -8,7 +8,12 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "co": "^4.6.0",
     "ejs": "^2.5.2",
-    "mu2": "^0.5.21"
+    "koa": "^1.2.4",
+    "lodash": "^4.16.4",
+    "marko": "^3.11.8",
+    "mu2": "^0.5.21",
+    "supertest": "^2.0.1"
   }
 }

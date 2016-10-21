@@ -1,9 +1,26 @@
-{{> layout-head.ejs }}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="<%= cssURL %>">
+</head>
+<body>
+
 <div>
   <ul>
     {{#names}}
-      <li>{{name}}</li>
+      {{#i}}
+      <li>1:{{name}}</li>
+      {{/i}}
+      {{^i}}
+      <li>2:{{name}}</li>
+      {{/i}}
+
     {{/names}}
   </ul>
 </div>
-{{> layout-foot.ejs }}
+<script src="{{jsURL}}"></script>
+</body>
+</html>

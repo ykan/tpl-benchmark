@@ -1,9 +1,24 @@
-<%- include('layout-head', { title: title, cssURL: cssURL }) %>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="<%= cssURL %>">
+</head>
+<body>
+
 <div>
   <ul>
     <% names.forEach(function(name, i){ %>
+      <% if(i%2){ %>
+      <li>1:<%= name %></li>
+      <% } else { %>
       <li>2:<%= name %></li>
+      <% } %>
     <% }) %>
   </ul>
 </div>
-<%- include('layout-foot', { jsURL: jsURL }) %>
+<script src="<%= jsURL %>"></script>
+</body>
+</html>
