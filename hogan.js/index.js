@@ -36,4 +36,3 @@ request(app.listen())
     console.log(`cost ${Date.now() - time}ms`);
     process.exit();
   });
-

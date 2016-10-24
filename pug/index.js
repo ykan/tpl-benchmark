@@ -8,7 +8,7 @@ let data = {
   name: 'ykan'
 };
 let names = [];
-for (let i = 1000000; i >= 0 ; i--) {
+for (let i = 10; i >= 0 ; i--) {
   names.push({
     name: 'test' + i
   });
@@ -31,7 +31,7 @@ request(app.listen())
   .get('/')
   .expect(200)
   .end((err, res) => {
-    // console.log(res.text);
+    console.log(res.text);
     console.log(`cost ${Date.now() - time}ms`);
     process.exit();
   });
